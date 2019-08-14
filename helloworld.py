@@ -15,7 +15,7 @@ def hello_world():
     #     "city": "New York"
     # }
     # y = json.dumps(x)
-    body = request.data
-    y = rekomendasi.recommender(body.resume)
+    body = request.get_json()
+    y = rekomendasi.recommender(body['resume'])
 
     return y
