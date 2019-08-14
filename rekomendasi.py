@@ -44,7 +44,7 @@ def recommender(query):
     conn = sqlite3.connect('/var/www/helloworld/db_buku.db') #koneksi ke database
 
     
-    cursor = conn.execute("SELECT id, judul, penulis, teks from BUKU")
+    cursor = conn.execute("SELECT id, judul, pt, teks from LOWONGAN")
     data = list(cursor)
 
     #data buku dimasukan ke document train
