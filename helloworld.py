@@ -18,4 +18,4 @@ def hello_world():
     body = request.data
     y = rekomendasi.recommender(body.resume)
 
-    return body
+    return y
