@@ -12,4 +12,4 @@ def hello_world():
         "city": "New York"
     }
     y = json.dumps(x)
-    return jsonify(y)
+    return y
