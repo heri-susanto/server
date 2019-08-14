@@ -123,6 +123,6 @@ def recommender(query):
         cosine_similarities_test)]
 
     #mengembalikan judul buku dengan isi dokumen yang paling sesuai
-    return most_similar_document_test
+    return my_json_string
 
 
