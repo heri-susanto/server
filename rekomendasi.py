@@ -41,7 +41,7 @@ def filter_words_and_get_word_stems(document,
 
 #function recommender dengan parameter query. query adalah pesan yang dikirim oleh pengguna line
 def recommender(query):
-    conn = sqlite3.connect('/var/www/helloworld/db_buku.db') #koneksi ke database
+    conn = sqlite3.connect('/var/www/helloworld/db_lowongan.db') #koneksi ke database
 
     
     cursor = conn.execute("SELECT id, judul, pt, teks from LOWONGAN")
