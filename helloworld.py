@@ -16,7 +16,9 @@ def hello_world():
     # }
     # y = json.dumps(x)
     body = request.data
-    resume = body['resume']
+    text_file = open("Output.txt", "w")
+    text_file.write(body)
+    text_file.close()
     # y = rekomendasi.recommender('heriganteng')
     
-    return resume
+    return body
