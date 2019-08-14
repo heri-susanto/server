@@ -8,6 +8,7 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory #mengubah ke kata dasar 
 import sys
 import warnings
+import json
 import sqlite3 #database
 from gensim.models import TfidfModel #tfidf
 
@@ -49,7 +50,7 @@ def recommender(query):
 
     #data buku dimasukan ke document train
     documents_train =  [each_list[3] for each_list in data]
-    judul_buku = [each_list[1] for each_list in data]
+    judul_buku = [each_list[2] for each_list in data]
     conn.close()
     # print(documents_train)
     # print('\n')
@@ -106,6 +107,15 @@ def recommender(query):
 
     # lakukan perhitungan cosine similiarity pada semua dokumen
     cosine_similarities_test = cosine_similarity_matrix[vector_lsi_test]
+    x = np.argsort(cosine_similarities_test)[::-1]
+    print(x)
+    z = []
+    for y in x:
+        z.append(judul_buku[y])
+
+    my_json_string = json.dumps(z)
+    # print(type(most_similar_document_test))
+    print(my_json_string)
 
     # OUTPUT
     # ambil dokumen dengan cosine similiarity tertinggi
