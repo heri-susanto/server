@@ -1,0 +1,13 @@
+from flask import Flask
+from flask import jsonify
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    d = 'Hello, World!'
+    x = {
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}
+    return jsonify(d)
