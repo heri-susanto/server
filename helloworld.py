@@ -16,6 +16,7 @@ def hello_world():
     # }
     # y = json.dumps(x)
     body = request.data
+    resume = body['resume']
     # y = rekomendasi.recommender('heriganteng')
     
-    return body
+    return resume
