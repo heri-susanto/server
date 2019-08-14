@@ -15,6 +15,7 @@ def hello_world():
     #     "city": "New York"
     # }
     # y = json.dumps(x)
-    body = request.get_data(as_text=True)
+    body = request.data
     # y = rekomendasi.recommender('heriganteng')
+    
     return body
