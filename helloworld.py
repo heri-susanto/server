@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, request
 from flask import jsonify
 import json
 import rekomendasi as rekomendasi
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def hello_world():
     # x = {
     #     "name": "John",
@@ -13,5 +13,6 @@ def hello_world():
     #     "city": "New York"
     # }
     # y = json.dumps(x)
-    y = rekomendasi.recommender('heriganteng')
-    return y
+    body = request.get_data(as_text=True)
+    # y = rekomendasi.recommender('heriganteng')
+    return body
